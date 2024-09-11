@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3030",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "vite build && npm run copy-to-docs",
+    "preview": "vite preview",
+    "copy-to-docs": "shx rm -rf docs && shx mkdir docs && shx cp -r dist/* docs && shx rm -rf dist"
   },
   "dependencies": {
     "@handsontable/vue3": "^14.3.0",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@types/papaparse": "^5.3.14",
     "@vitejs/plugin-vue": "^5.0.4",
+    "shx": "^0.3.4",
     "vite": "^5.2.0"
   }
 }

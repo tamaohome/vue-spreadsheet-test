@@ -2,12 +2,12 @@
 
 import { parseCSV } from "../src/utils/parseCSV";
 
-const csvPath = "./13TOKYO.CSV";
+const csvPath = "sample/13TOKYO.CSV";
 
 export const getData = async (): Promise<any[][]> => {
   let data: any[][] = [];
   try {
-    data = await parseCSV(csvPath, encoding="shift-jis");
+    data = await parseCSV(csvPath, "shift-jis");
   } catch (error) {
     console.error(error);
   }
